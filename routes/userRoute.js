@@ -9,26 +9,26 @@ import {
     deleteFriend
 } from '../controllers/userController.js';
 
-const router = Router();
+const userRouter = Router();
 
 // api/users
-router
+userRouter
     .route('/')
     .get(getAllUsers)
     .post(createUser);
 
 
 // api/users/:id
-router
+userRouter
     .route('/:id')
     .get(getUserById)
     .put(updateUser)
     .delete(deleteUser);
 
 // api/users/:userId/friends/:friendId
-router
+userRouter
     .route('/:userId/friends/:friendId')
     .post(addFriend)
     .delete(deleteFriend);
 
-export default router;
+export default userRouter;

@@ -7,17 +7,17 @@ import {
     deleteThought
 } from '../controllers/thoughtController.js';
 
-const router = Router();
+const thoughtRouter = Router();
 
 // api/thoughts
-router.route('/')
+thoughtRouter.route('/')
     .get(getAllThoughts)
     .post(createThought);
 
 // api/thoughts/:id
-router.route('/:id')
+thoughtRouter.route('/:id')
     .get(getThoughtById)
     .put(updateThought)
     .delete(deleteThought);
 
-export default router;
+export default thoughtRouter;
