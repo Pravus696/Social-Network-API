@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-mongoose.connect(pocess.env.MONGODB_URI || 'mongodb://localhost:27017/socialNetworkDB', {
+mongoose.connect('mongodb://localhost:27017/socialNetworkDB', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
