@@ -1,5 +1,5 @@
 import pkg from 'mongoose';
-const { Schema, model } = pkg;
+const { Schema, Types } = pkg;
 
 const reactionSchema = new Schema(
     {
@@ -30,6 +30,4 @@ const reactionSchema = new Schema(
     }
 );
 
-const reaction = model('Reaction', reactionSchema);
-
-export default reaction;
+export default reactionSchema;
