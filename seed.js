@@ -29,6 +29,9 @@ const seedData = async () => {
             email: 'bob@example.com',
         },
     ]);
+    console.log('Users seeded!');
+
+    console.log('Users:', users);
 
     const thoughts = await Thought.insertMany([
         {
@@ -62,6 +65,9 @@ const seedData = async () => {
             ],
         },
     ]);
+    console.log('Thoughts:', thoughts);
+
+    console.log('Thoughts seeded!');
 
     console.log('Database seeded!');
     mongoose.connection.close();

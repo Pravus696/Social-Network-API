@@ -4,7 +4,7 @@ import user from "../models/user.js";
 // Get all thoughts
 export const getAllThoughts = async (req, res) => {
   try {
-    const thoughts = await thought.find();
+    const thoughts = await thought.find().populate("reactions");
     res.json(thoughts);
   } catch (error) {
     res.status(400).json(error);
