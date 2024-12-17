@@ -7,6 +7,7 @@ interface IReaction extends Document {
   username: string;
   createdAt: Date | string;
 }
+
 // define the thought interface
 interface IThought extends Document {
   thoughtText: string;
