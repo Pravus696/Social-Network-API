@@ -1,5 +1,13 @@
-import pkg from 'mongoose';
-const { Schema, model } = pkg;
+import { Document, Schema, model, ObjectId } from "mongoose";
+
+// define the user interface
+interface IUser extends Document {
+    username: string;
+    email: string;
+    thoughts: ObjectId[];
+    friends: ObjectId[];
+    friendCount: number;
+  }
 
 const userSchema = new Schema(
     {

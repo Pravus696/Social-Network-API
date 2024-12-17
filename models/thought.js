@@ -1,7 +1,20 @@
-import pkg from 'mongoose';
-import reactionSchema from './reaction.js';
+import { Document, model, Schema, ObjectId, Types } from "mongoose";
 
-const { Schema, model } = pkg;
+// define the reaction interface
+interface IReaction extends Document {
+    reactionId: ObjectId;
+    reactionBody: string;
+    username: string;
+    createdAt: Date | string;
+  }
+  // define the thought interface
+  interface IThought extends Document {
+    thoughtText: string;
+    createdAt: Date | string;
+    username: string;
+    reactions: (typeof reactionSchema)[];
+    reactionCount: number;
+  }
 
 const thoughtSchema = new Schema(
     {
@@ -14,7 +27,7 @@ const thoughtSchema = new Schema(
         createdAt: {
             type: Date,
             default: Date.now,
-            get: (createdAtVal) => dateFormat(createdAtVal).toLocaleDateString(),
+            get: (createdAtVal) => val.toLocaleDateString(),
         },
         username: {
             type: String,
